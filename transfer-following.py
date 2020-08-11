@@ -1,5 +1,4 @@
 import tweepy
-import time
 
 username = str(input('Enter the username of your old account with followers: '))
 
@@ -19,8 +18,6 @@ ids = []
 print('Finding users... ')
 for page in tweepy.Cursor(api.friends_ids, screen_name=username).pages():
     ids.extend(page)
-    #the below line is for rate limits: it may not be needed
-    #time.sleep(60)
 
 print('Got following of', username)
 
@@ -39,7 +36,5 @@ for user in ids:
     except:
         print('There was an error following the user with ID', user)
         continue
-    #the below line is for rate limits: it may not be needed
-    #time.sleep(5)
 
 print('Your followers should have been transferred!')
