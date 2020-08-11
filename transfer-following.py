@@ -37,4 +37,4 @@ for user in ids:
         print('There was an error following the user with ID', user)
         continue
 
-print('Your followers should have been transferred!')
+print('Your following should have been transferred!')
